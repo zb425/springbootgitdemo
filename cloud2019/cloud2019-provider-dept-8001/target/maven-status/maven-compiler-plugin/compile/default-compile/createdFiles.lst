@@ -1,0 +1,5 @@
+com\bgamq\boot\dao\DeptDao.class
+com\bgamq\boot\service\DeptService.class
+com\bgamq\boot\service\impl\DeptServiceImpl.class
+com\bgamq\boot\ProviderDeptMain8001.class
+com\bgamq\boot\controller\DeptController.class

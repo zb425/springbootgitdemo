@@ -3,11 +3,11 @@ package com.bgamq.springboot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//@SpringBootApplication
-public class SpringbootgitdemoApplication {
+@SpringBootApplication
+public class SpringbootdemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootgitdemoApplication.class, args);
+        SpringApplication.run(SpringbootdemoApplication.class, args);
     }
 
 }

@@ -1,13 +1,12 @@
-package com.bgamq.springboot;
+package com.bgamq.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//@SpringBootApplication
-public class SpringbootgitdemoApplication {
+@SpringBootApplication
+public class ProviderDeptMain8001 {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootgitdemoApplication.class, args);
+        SpringApplication.run(ProviderDeptMain8001.class,args);
     }
-
 }
