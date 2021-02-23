@@ -1,0 +1,31 @@
+server:
+  port: 5000
+
+
+spring:
+  application:
+    name: bgamq-crowd-project
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:
+    host: 47.94.170.147
+    database: 0
+    port: 6379
+  session:
+    store-type: redis
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:1000/eureka
+
+aliyun:
+  oss:
+    access-key-id: LTAI4GF2KSPhhLnxVVGFPsiB
+    access-key-secret: 16eNYqmPItRn41wIX42WdgPLPc4IQ4
+    bucket-domain: http://bgamqcrowd.oss-cn-guangzhou.aliyuncs.com
+    bucket-name: bgamqcrowd
+    end-point: http://oss-cn-guangzhou.aliyuncs.com

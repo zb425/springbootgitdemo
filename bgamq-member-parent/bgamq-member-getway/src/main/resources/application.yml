@@ -1,0 +1,49 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: bgamq-crowd-getway
+  redis:
+    host: 47.94.170.147
+    database: 0
+    port: 6379
+  session:
+    store-type: redis
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#        - id: crowd-auth-routh
+#          uri: lb://bgamq-crowd-auth
+#          predicates:
+#            - Path=/**
+zuul:
+  ignored-services: "*"
+  sensitive-headers: "*" # 在 Zuul 向其他微服务重定向时保持原本头信息（请求头、响应头）
+  routes:
+    crowd-portal:
+      service-id: bgamq-crowd-auth
+      path: /** # 这里一定要使用两个“*”号，不然“/”路径后面的多层路径将无法访问
+    crowd-project:
+      service-id: bgamq-crowd-project
+      path: /project/** # 这里一定要使用两个“*”号，不然“/”路径后面的多层路径将无法访问
+    crowd-order:
+      service-id: bgamq-crowd-order
+      path: /order/** # 这里一定要使用两个“*”号，不然“/”路径后面的多层路径将无法访问
+    crowd-pay:
+      service-id: bgamq-crowd-pay
+      path: /pay/** # 这里一定要使用两个“*”号，不然“/”路径后面的多层路径将无法访问
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:1000/eureka
+
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000

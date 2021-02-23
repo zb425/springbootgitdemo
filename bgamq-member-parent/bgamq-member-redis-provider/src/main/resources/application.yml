@@ -1,0 +1,15 @@
+server:
+  port: 3000
+
+spring:
+  application:
+    name: bgamq-crowd-redis
+  redis:
+    host: 47.94.170.147
+    database: 0
+    port: 6379
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka

@@ -1,0 +1,23 @@
+server:
+  port: 6000
+
+
+spring:
+  application:
+    name: bgamq-crowd-order
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:
+    host: 47.94.170.147
+    database: 0
+    port: 6379
+  session:
+    store-type: redis
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:1000/eureka
